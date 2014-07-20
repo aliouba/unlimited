@@ -1,0 +1,20 @@
+
+#esenegal {
+        font-family: 'Tangerine', serif;
+        font-size: 48px;
+    color :#3715BF;
+    text-align: center;
+ }
+#login {
+    text-align: center;
+ }
+body , .hoverbleu{
+ background-color:#D0EAF5;
+}
+.hoverbleu:hover {
+ background-color:#54C4F0;
+}
+
+.panel{
+	padding:0px;
+}
