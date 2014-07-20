@@ -2,7 +2,11 @@
 {% load i18n %}
 
 {% block content %}
-<form method="post" action=".">
+
+<div class="row"  id="esenegal">
+ e-Senegal 
+</div>
+<form id="login" method="post" action=".">
   {% csrf_token %} 
   {{ form.as_p }}
 
