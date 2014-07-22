@@ -7,18 +7,17 @@
  e-Senegal 
 </div>
 
-<div id="login"  class="row">
+<div class="row">
+		<form   id="login"  class="col-md-3" method="post" action="." role="form">
+			{% csrf_token %} 
 
-<form method="post" action="." role="form">
-	{% csrf_token %} 
+			  <input type="text" id="id_username" class="form-control" name="username" placeholder="Username" >
 
-      <input type="text" id="id_username" class="form-control" name="username" placeholder="Username" >
-
-      <input type="password" class="form-control" id="id_password"  name="password"  placeholder="Password">
-      
-      <button type="submit" class="btn btn-primary"  value="{% trans 'Log in' %}">Sign in</button>
-      <input type="hidden" name="next" value="{{ next }}" />
-</form>
+			  <input type="password" class="form-control" id="id_password"  name="password"  placeholder="Password">
+			  
+			  <button type="submit"   id="login-submit"  class="btn btn-primary btn-lg"  value="{% trans 'Log in' %}">Sign in</button>
+			  <input type="hidden" name="next" value="{{ next }}" />
+		</form>	
 </div>
 
 <p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
