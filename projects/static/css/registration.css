@@ -1,3 +1,6 @@
+body{
+background-color :#ADADAD;
+}
 
 #esenegal {
         font-family: 'Tangerine', serif;
@@ -6,15 +9,14 @@
     text-align: center;
  }
 #login {
-    text-align: center;
+    float: none;
+    margin: 0 auto;
  }
-body , .hoverbleu{
- background-color:#D0EAF5;
-}
-.hoverbleu:hover {
- background-color:#54C4F0;
+#login-submit{
+	float : right;
+	margin-top : 20px;
 }
 
-.panel{
-	padding:0px;
-}
+
+
+
