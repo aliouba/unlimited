@@ -17,6 +17,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'registration',
+    'first',
 )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
