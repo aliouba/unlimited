@@ -25,4 +25,4 @@ class Clients(models.Model):
     entreprise = models.ForeignKey(Entreprises)
     code = models.CharField(max_length=10)
     def __unicode__(self):
-		return u"%s" % self.nom
+	    return u"%s" % self.nom

@@ -4,9 +4,7 @@ background-color :#ADADAD;
 
 #esenegal , .esenegal {
         font-family: 'Tangerine', serif;
-        font-size: 48px;
-    color :#3715BF;
-    text-align: center;
+
  }
 #login {
     float: none;
@@ -15,6 +13,11 @@ background-color :#ADADAD;
 #login-submit{
 	float : right;
 	margin-top : 20px;
+}
+.titreform{
+	    text-align: center;
+	    font-size: 48px;
+    color :#3715BF;
 }
 
 
