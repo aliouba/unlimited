@@ -7,73 +7,124 @@
  Ajout d'un nouveau client 
 </div>
 
+
+
 <div class="row">
 <form class="form-horizontal" role="form" action="/first/newclient/"  method="post">
 	{% csrf_token %} 
-	<div   class="col-md-6" id="formclient1">
+	<div   class="col-md-6">
 		 <div class="form-group">
-			<label for="inputnon" class="col-sm-2 control-label">{% trans 'Nom' %}:</label>
+			{% if add_client.nom.errors %}
+				<div class="alert alert-danger" role="alert">
+				{% for error in add_client.nom.errors %}
+					<li><strong>{{ error|escape }}</strong></li>
+				{% endfor %}
+				</div>
+			{% endif %}			 
+			<label for="id_nom" class="col-sm-2 control-label">{% trans 'Nom' %}:</label>
 			<div class="col-sm-10">
-			  <input type="text" class="form-control" name ="nom" id="inputnon" placeholder="{% trans 'Nom' %}">
+			  {{ add_client.nom }}
+			</div>
+		  </div>
+		  
+		 <div class="form-group">
+			 {{ add_client.prenom.errors }}
+			<label for="id_prenom" class="col-sm-2 control-label">{% trans 'Prenom' %}:</label>
+			<div class="col-sm-10">
+			  {{ add_client.prenom }}
+			</div>
+		  </div>
+
+		 <div class="form-group">
+			 {{ add_client.date_naissance.errors }}
+			<label for="id_date_naissance" class="col-sm-2 control-label">{% trans 'Date de naissance' %}:</label>
+			<div class="col-sm-10">
+			  {{ add_client.date_naissance }}
 			</div>
 		  </div>
 		 <div class="form-group">
-			<label for="inputprenom" class="col-sm-2 control-label">{% trans 'Prenom' %}:</label>
+			 {{ add_client.telephone.errors }}
+			<label for="id_telephone" class="col-sm-2 control-label">{% trans 'Téléphone' %}:</label>
 			<div class="col-sm-10">
-			  <input type="text" class="form-control" name ="prenom" id="inputprenom" placeholder="{% trans 'Prénom' %}">
+				{{ add_client.telephone }}			
 			</div>
 		  </div>
 		 <div class="form-group">
-			<label for="inputnaissance" class="col-sm-2 control-label">{% trans 'Date de naissance' %}:</label>
+			 {{ add_client.email.errors }}
+			<label for="id_email" class="col-sm-2 control-label">{% trans 'Email' %}:</label>
 			<div class="col-sm-10">
-			  <input type="text" class="form-control" name ="date_naissance" id="inputnaissance" placeholder="EX  :24/03/1989">
+			  {{ add_client.email }}	
 			</div>
 		  </div>
 		 <div class="form-group">
-			<label for="inputtel" class="col-sm-2 control-label">{% trans 'Téléphone' %}:</label>
+			 {{ add_client.code.errors }}
+			<label for="id_code" class="col-sm-2 control-label">{% trans 'Mot de Passe' %}:</label>
 			<div class="col-sm-10">
-			  <input type="text" class="form-control" name ="telephone" id="inputtel" placeholder="EX : 00221 77 447 12 24">
+			  {{ add_client.code }}	
 			</div>
 		  </div>
 		 <div class="form-group">
-			<label for="inputmail" class="col-sm-2 control-label">{% trans 'Email' %}:</label>
+			 {{ add_client.code2.errors }}
+			<label for="id_code2" class="col-sm-2 control-label">{% trans 'Vérifier Mot de Passe' %}:</label>
 			<div class="col-sm-10">
-			  <input type="email" class="form-control" name ="mail" id="inputmail" placeholder="EX : example@gmail.com">
+			  {{ add_client.code2 }}	
 			</div>
 		  </div>
+
+		 <div class="form-group">
+			 {{ add_client.entreprise.errors }}
+			<label for="id_entreprise" class="col-sm-2 control-label">{% trans 'Entreprise' %}:</label>
+			<div class="col-sm-10">
+			  {{ add_client.entreprise }}	
+			</div>
+		  </div>
+		  
 	</div>
-	<div   class="col-md-6" id="formclient2">
+	<div   class="col-md-6">
 		 <div class="form-group">
-			<label for="inputpays" class="col-sm-2 control-label">{% trans 'Pays' %}:</label>
+			 {{ add_client.pays.errors }}	
+			<label for="id_pays" class="col-sm-2 control-label">{% trans 'Pays' %}:</label>
 			<div class="col-sm-10">
-			  <input type="text" class="form-control" name ="pays" id="inputpays" placeholder="{% trans 'Pays' %}">
+				{{ add_client.pays }}	
 			</div>
 		  </div>
 		 <div class="form-group">
-			<label for="inputregion" class="col-sm-2 control-label">{% trans 'Région' %}:</label>
+			 {{ add_client.region.errors }}	
+			<label for="id_region" class="col-sm-2 control-label">{% trans 'Région' %}:</label>
 			<div class="col-sm-10">
-			  <input type="text" class="form-control" name ="region" id="inputregion" placeholder="{% trans 'Région' %}">
+			  {{ add_client.region }}	
 			</div>
 		  </div>
 		 <div class="form-group">
-			<label for="inputcommune" class="col-sm-2 control-label">{% trans 'Commune' %}:</label>
+			 {{ add_client.ville.errors }}	
+			<label for="id_ville" class="col-sm-2 control-label">{% trans 'Ville' %}:</label>
 			<div class="col-sm-10">
-			  <input type="text" class="form-control" name ="commune" id="inputcommune" placeholder="{% trans 'Commune' %}">
+			  {{ add_client.ville }}	
 			</div>
 		  </div>
 		 <div class="form-group">
-			<label for="inputadresses" class="col-sm-2 control-label">{% trans 'Adresse' %}:</label>
+			 {{ add_client.commune.errors }}	
+			<label for="id_commune" class="col-sm-2 control-label">{% trans 'Commune' %}:</label>
 			<div class="col-sm-10">
-			  <input type="text" class="form-control" name ="adresse" id="inputadresses" placeholder="{% trans 'Adresse' %}">
+			  {{ add_client.commune }}
 			</div>
 		  </div>
+		 <div class="form-group">
+			 {{ add_client.adresse.errors }}
+			<label for="id_adresse" class="col-sm-2 control-label">{% trans 'Adresse' %}:</label>
+			<div class="col-sm-10">
+			  {{ add_client.adresse }}
+			</div>
+		  </div>	
+
 		  <div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
 			  <button type="submit"   id="login-submit"  class="btn btn-primary btn-lg"  value="{% trans 'Ajout Client' %}">{% trans 'Ajout Client' %}</button>
 			  <input type="hidden" name="next" value="{{ next }}" />
 			</div>
-		  </div>
-	
+		  </div>	
+		    		  		
+	</div>	
 	</div>
 </form>
 </div>
